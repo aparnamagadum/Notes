@@ -1,0 +1,1162 @@
+Just Logic part 
+
+
+Insertion sort
+int arr[]={30,20,10,40,50}
+for(int i=1;i<=-arr.length-1;i++){
+for(int j=1;j<arr.length-1;i++){
+if(arr[j]<arr[j-1]){
+int temp=arr[j];
+arr[j]=arr[j-1];
+arr[j-1]=temp;
+}
+}
+}
+for(int i=0;i<arr.lenght-1;i++){
+System.out.print(arr[i]+" ");
+}
+
+
+bubble sort
+[10,20,40,1,0,45,1] => sort in ascending order
+for(int i=1;i<=arr.length-1;i++){
+for(int j=0;j<=arr.length-1;j++){
+    if(arr[j]>arr[j+1]){
+int temp=arr[j];
+arr[j]=arr[j+1];
+arr[j+1]=temp;
+}
+}
+}
+for(int i=0;i<arr.length-1;i++){
+System.out.print(arr[i]+" ");}
+
+Selection sort
+int arr[]={10,20,30,10,20}
+for(int i=0;i<arr.length;i++){
+int min=i;
+for(int j=i+1;j<arr.length;j++){
+ if(arr[j]<arr[min]) min=j;
+}
+int temp=arr[i];
+arr[i]=arr[min];
+arr[min]=temp;
+}
+for(int i=0;i<arr.length;i++){
+System.out.print(arr[i]+" ");
+}
+
+
+Kth smallest element if array has uniq elements
+int k=3;
+int arr[]={1,10,45,390,29,15};
+for(int i=1;i<=arr.lenght-1;i++){
+for(int j=0;j<arr.lenght-1;j++){
+if(arr[j]>arr[j+1]){
+int temp=arr[j];
+arr[j]=arr[j+1];
+arr[j+1]=temp;
+}
+}
+}
+System.out.println(arr[k]);
+
+sort array with build in function
+int arr[]={10,20,30,40,60,20,34};
+Arrays.sort(arr);
+for(int i=0;i<arr.length;i++){
+System.out.print(arr[i]+" ");
+}
+
+
+first maximum and second maximum and third maximum in array 
+int arr[]={10,20,33,13,24,59,49};
+int max1=arr[0];
+int max2=arr[0];
+int max3=arr[0];
+for(int i=0;i<arr.length;i++){
+if(arr[i]>max1){
+max3=max2;
+max2=max1;
+max1=arr[i];
+}
+else if(arr[i]>max2 && arr[i]<max1){
+max3=max2;
+max2=arr[i];
+}
+else if(arr[i]>max3 && arr[i]<max2){
+max3=arr[i];
+}
+}
+System.out.println(max1+" "+ max2+" " + max3);
+
+
+maximum product of 3 numbers in array
+int arr[]={-7 3 -5 2 4};
+int n=arr.length;
+Arrays.sort(arr);
+int ans1=arr[0]*arr[1]*arr[2];
+int ans2=arr[n-1]*arr[n-2]*arr[n-3];
+if(ans1>=ans2) System.out.println(ans1);
+else System.out.println(ans2);
+
+
+merge two sorted array
+int arr[]={1 , 3 5, 7};
+int arr1[]={2, 4,6 8};
+int size=arr.length+arr1.length;
+int merge[]=new int[size];
+int j=0;
+int k=0;
+for(int i=0;i<size;i++){
+if(i<arr.length) {
+merge[i]=arr[j];
+j++;
+}
+if(i>=arr.length){
+ merge[i]=arr1[k];
+k++;
+}
+}
+Arrays.sort(merge);
+for(int i=0;i<size;i++){
+System.out.print(merge[i]+" ");
+}
+
+
+peak element => element should be greater than its prev and next element
+int arr[]={4 , 5, 3, 8,6,1};
+for(int i=1;i<arr.length-1;i++){
+if(arr[i]>arr[i-1] && arr[i]>arr[i+1]) {
+System.out.print(arr[i]+" ");
+}
+}
+
+
+print all subarray of array
+int arr[]={1,2 ,3 4,5};
+for(int i=0;i<arr.length;i++){
+for(int j=i;j<arr.length;j++){
+for(int k=i;k<=j;k++){
+System.out.print(arr[k]+" ");
+}
+System.out.println();
+}
+}
+
+sum of subarray
+int arr[]={1,2,3,4,5};
+for(int i=0;i<arr.length;i++){
+for(int j=i;j<arr.length;j++){
+int sum=0;
+for(int k=i;k<=j;k++){
+sum+=arr[k];
+}
+System.out.println(sum);
+}
+}
+
+max subarray
+int arr[]={1,2,3,4,5};
+int sum=0;
+int max=arr[0];
+for(int i=0;i<arr.length;i++){
+sum+=arr[i];
+if(sum<0) sum=0;
+if(sum>=0) max+=sum;
+}
+System.out.println(max);
+
+max product subarray
+int arr[]={1,2,3,4,5};
+int prod=1;
+int max=arr[0];
+for(int i=0;i<arr.length;i++){
+prod*=arr[i];
+if(prod==0) prod=1;
+if(prod>=1) max*=prod;
+}
+System.out.println(max);
+
+
+Reverse Array(two pointer approach)
+int arr[]={1,2,3,4,5};
+int i=0;
+int j=arr.length-1;
+while(i<=j){
+int temp=arr[i];
+arr[i]=arr[j];
+arr[j]=temp;
+i++;
+j--;
+}
+for(int i=0;i<arr.length;i++){
+System.out.print(arr[i]+" ");
+}
+
+max product subarray
+int arr[]={1,2,3,4,5};
+int prod=1;
+int max=arr[0];
+for(int i=0;i<arr.length;i++){
+prod*=arr[i];
+if(prod==0) prod=1;
+if(prod>=1) max*=prod;
+}
+System.out.println(max);
+
+Rotate Right(Array);
+int k=2(indicates Rotate by two element );
+int arr[]={1,2,3,4,5};
+public static int[] reverse(int arr , int i , int j){
+while(i<=j){
+int temp=arr[i];
+arr[i]=arr[j];
+arr[j]=temp;
+i++;
+j--;
+}
+return arr;
+}
+reverse(arr,0,arr.length-k-1);
+reverse(arr,arr.length-k,arr.length-1);
+reverse(arr,0,arr.length-1);
+for(int i=0;i<arr.length;i++){
+System.out.print(arr[i]+" ");
+}
+
+
+Move zeroes and ones(by pointer approach);
+int arr[]={0,1,0,1,1,0};
+int i=0;
+int j=arr.length-1;
+while(i<j){
+if(arr[i]==1){
+int temp=arr[i];
+arr[i]=arr[j];
+arr[j]=temp;
+j--;;
+}
+else if(arr[i]==0){
+i++;
+}
+}
+for(int i=0;i<arr.length;i++){
+System.out.print(arr[i]+" ");
+}
+
+sort 0 1 2(Dutch National Flag Algorithm);
+int arr[]={1,0,1,2,0};
+int i=0;
+int j=0;
+int k=arr.length-1;
+while(i<=k){
+if(arr[i]==2){
+int temp=arr[i];
+arr[i]=arr[k];
+arr[k]=temp;
+k--;
+}
+else if(arr[i]==0){
+int temp=arr[i];
+arr[i]=arr[j];
+arr[j]=temp;
+i++;
+j++;
+}
+else if(arr[i]==1){
+j++;
+}
+}
+for(int i=0;i<arr.length;i++){
+System.out.print(arr[i]+" ");
+}
+
+
+Target sum(two pointer)
+Note=>always keep array in sorted order
+int arr[]={-1,1,2,3 4,5};
+int targetSum=4;
+int i=0;
+int j=arr.length-1;
+while(i<j){
+if(arr[i]+arr[j]>targetSum){
+j--;
+}
+else if(arr[i]+arr[j]<targetSum){
+i++;
+}
+else{
+System.out.println(i+" "+j);
+i++;
+j--;
+}
+}
+
+prefix sum
+int arr[]={1,2,3,4,5};
+int pref[]=new int[arr.length];
+int sum=0;
+for(int i=0;i<arr.length;i++){
+    sum+=arr[i];
+    pref[i]=sum;
+}
+for(int i=0;i<pref.length;i++){
+System.out.print(pref[i]+" ");
+}
+
+Pivote Index(prefix sufix equal element)
+int arr[]={1,7,3,6,5,6};
+int pref[]=new int[arr.length];
+int sum=0;
+for(int i=0;i<arr.length;i++){
+sum+=arr[i];
+pref[i]=sum;
+}
+int sum1=0;
+int suf[]=new int[arr.length];
+for(int i=arr.length-1;i>=0;i--){
+sum1+=arr[i];
+suf[i]=sum1;
+}
+for(int i=0;i<arr.length;i++){
+if(pref[i]==suf[i]){
+System.out.println(i);
+}
+}
+
+frequency of String
+int freq[]=new int[26];
+string s="abcdaccd";
+for(int i=0;i<a.length();i++){
+char c=s.charAt(i);
+freq[c-'a']++;
+}
+//for(int i=0;i<freq.length;i++){
+//System.out.print(freq[i]+" ");
+//}
+for(int i=0;i<s.length;i++){
+char c=s.charAt(i);
+System.out.println(c+"-"+freq[c-'a']);
+}
+
+    maximum freq of number
+    int arr[]={1,1,2,3,4};
+    int freq[]=new int[10];
+    for(int i=0;i<arr.length;i++){
+    freq[arr[i]]++;
+    }
+    int max=0;
+    for(int i=0;i<freq.length;i++){
+    if(freq[i]>max) max=i;
+    }
+    System.out.println(max);
+
+
+maximum freq character
+String str="abcdaccd";
+int freq[]=new int[26];
+for(int i=0;i<str.length();i++){
+char ch=str.charAt(i);
+freq[ch-'a']++;
+}
+int max=0;
+for(int i=0;i<freq.length;i++){
+if(freq[i]>max) max=i;
+}
+System.out.println((char)(max+'a'));
+
+digit with highest freq
+int num=11234;
+int freq[]=new int[10];
+while(num>0){
+int rem=num%10;
+freq[rem]++;
+num/=10
+}
+int max=0;
+for(int i=0;i<freq.length;i++){
+if(freq[i]>max) max=i;
+}
+System.out.println(max);
+
+largest lucky number(number=freq)
+int arr[]={1,2,2,3,4};
+int freq[]=new int[10];
+for(int i=0;i<arr.length;i++){
+freq[arr[i]]++;
+}
+int max=0;
+for(int i=0;i<arr.length;i++){
+if(arr[i]==freq[arr[i]]) max=arr[i];
+}
+System.out.println(max);
+
+valid Anagram
+String s="anagram";
+string s1="nagaram";
+int freq[]=new int[26];
+int freq1[]=new int[26];
+if(s.length()!=s1.length()){
+System.out.println("not anagram");
+}
+else{
+for(int i=0;i<s.length();i++){
+char c=s.charAt(i);
+freq[c-'a']++;
+}
+for(int i=0;i<s1.length();i++){
+char c1=s1.charAt(i);
+freq1[c1-'a']++;
+}
+for(int i=0;i<26;i++){
+if(freq[i]!=freq1[i]) {
+System.out.println("not anagram");
+return;
+}
+}
+System.out.println("anagram");
+
+2D array
+int arr[][]=new int[3][3];
+for(int i=0;i<3;i++){
+for(int j=0;j<3;j++){
+arr[i][j]=scr.nextInt();
+}
+}
+for(int i=0;i<3;i++){
+for(int j=0;j<3;j++){
+System.out.print(arr[i][j]+" ");
+}
+System.out.println();
+}
+
+print alternate rows(2D);
+ int arr[][] = { 
+            {1, 2, 3}, 
+            {4, 5, 6}, 
+            {7, 8, 9}, 
+            {10, 11, 12} 
+        };
+for(int i=0;i<4;i+=2){
+for(int j=0;j<3;j++){
+System.out.print(arr[i][j]+" ");
+}
+System.out.println();
+}
+
+upper triangle
+int arr[][]=new int[3][3];
+for(int i=0;i<3;i++){
+for(int j=0;j<3;j++){
+arr[i][j]=scr.nextInt();
+}
+}
+for(int i=0;i<3;i++){
+for(int j=0;j<3;j++){
+if(j>=i) System.out.print(arr[i][j]+" ");
+else System.out.print(0+" ");
+}
+System.out.println();
+}
+
+Transpose matrix
+int arr[][]=new int[4][4];
+for(int i=0;i<4;i++){
+for(int j=0;j<4;j++){
+arr[i][j]=scr.nextInt();
+}
+}
+for(int i=0;i<4;i++){
+for(int j=0;j<4;j++){
+System.out.print(arr[j][i]+" ");
+}
+System.out.println();
+}
+
+Rotate matrix 180 degree(reverse column first then reverse row)
+int arr[][]=new int[3][3];
+for(int i=0;i<3;i++){
+for(int j=0;j<3;j++){
+arr[i][j]=scr.nextInt();
+}
+}
+//reverse column
+for(int i=0;i<3;i++){
+int j=0;
+int k=3-1;
+while(j<k){
+int temp=arr[j][i];
+arr[j][i]=arr[k][i];
+arr[k][i]=temp;
+j++;
+k--;
+}
+}
+//reverse row
+for(int i=0;i<3;i++){
+int j=0;
+int k=3-1;
+while(j<k){
+int temp=arr[i][j];
+arr[i][j]=arr[i][k];
+arr[i][k]=temp;
+j++;
+k--;
+}
+}
+for(int i=0;i<3;i++){
+for(int j=0;j<3;j++){
+System.out.print(arr[i][j]+" ");
+}
+System.out.println();
+}
+
+print maximum number of 1's
+int arr[][]={{1,1,0},{0,0,1},{1,1,1}};
+int max=0;
+int row=0;
+for(int i=0;i<3;i++){
+int count=0;
+for(int j=0;j<3;j++){
+if(arr[i][j]==1) count++;
+}
+if(count>max) max=count;
+row=i;
+}
+for(int i=0;i<3;i++){
+System.out.print(arr[row][i]+" ");
+}
+
+count words(split method);
+String s="welcome to geekster";
+String arr[]=s.split(" ");
+System.out.println(arr.length);
+
+
+palidrome String
+String str="radar";
+int i=0;
+int j=str.length()-1;
+while(i<j){
+if(str.charAt(i)!=str.charAt(j)){
+System.out.println("not a palindrome");
+return;
+}
+}
+System.out.println("palindrome");
+
+
+first palindromic string in array
+String arr[]={"abc","car","ada","racecar","cool"};
+public static palindrome(string str){
+int i=0;
+int j=str.length()-1;
+while(i<j){
+if(str.charAt(i)!=str.charAt(j)){
+System.out.println(not a palindrome);
+return;
+}
+i++;
+j--;
+}
+System.out.println("plaindrome");
+}
+for(int i=0;i<arr.length;i++){
+string str=arr[i];
+string ans=palindrome(str);
+if(ans=="palindrome"){
+System.out.println(str);
+return;
+}
+}
+
+
+First non repeating character in string
+String str="AAccddeefgg";
+for(int i=1;i<str.length()-1;i++){
+if(str.charAt(i)!=str.charAt(i-1) && str.charAt(i)!=str.charAt(i+1)){
+System.out.println(str.charAt(i));
+return;
+}
+}
+
+all substrings
+String str="abcde";
+for(int i=0;i<str.length();i++){
+for(int j=i;j<str.length();j++){
+for(int k=i;k<=j;k++){
+System.out.print(str.charAt(k)+" ");
+}
+System.out.println();
+}
+}
+
+longest palindromic substring
+public static String palidrome(String str){
+int i=0;
+int j=str.length()-1;
+while(i<j){
+if(str.charAt(i)!=str.charAt(j)){
+return "not"
+}
+i++;
+j--;
+}
+return "yes";
+}
+String str="abcba"
+ longestPalindrome="";
+for(int i=0;i<str.length();i++){
+for(int j=i;j<str.length();j++){
+String sum="";
+for(int k=i;k<=j;k++){
+sum+=str.charAt(k);
+}
+if (palindrome(sum).equals("yes") && sum.length() > longestPalindrome.length()) {
+longestPalindrome = sum;  
+}
+}
+}
+
+power of string
+String str="aabbcccddddeeeeeffgghheecccc";
+int len=0;
+Set s=new TreeSet();
+for(int i=0;i<str.length();i++){
+for(int j=i;j<str.length();j++){
+String sum="";
+for(int k=i;k<=j;k++){
+sum+=str.charAt(k);
+}
+for(int l=0;l<sum.length();l++){
+s.add(sum.charAt(l));
+}
+if(s.size()==1 && sum.length()>len){
+len=sum.length;
+}
+}
+}
+System.out.println(len);
+
+String str1="Let's take Leetcode context";
+String arr[]=str1.split(" ");
+String arr1[]=new String[arr.length];
+for(int i=0;i<arr.length;i++){
+char[] charArray = arr[i].toCharArray(); 
+int j = 0;
+int k = charArray.length - 1;
+while (j < k) {
+char temp = charArray[j];
+charArray[j] = charArray[k];
+charArray[k] = temp;
+j++;
+k--;
+}
+arr1[i] = new String(charArray); 
+}
+for(int i=0;i<arr.length;i++){
+System.out.print(arr1[i]+" ");
+}
+
+Binary Search(always sorted order)
+int arr[]={1,2,3,4,5,6,7};
+int x=5;
+int i=0;
+int j=arr.length-1;
+while(i<=j){
+int mid=(i+j)/2;
+if(arr[mid]==k){
+System.out.println(mid);
+return;
+}
+else if(arr[mid]<k) i=mid+1;
+else j=mid-1;
+}
+
+
+for each(int i : arr){
+System.out.print(i+" ");
+}
+
+linkedlist similar to arraylist
+
+Queue=> it is abstract so cant create object so extended by linkedlist
+Queue<Integer> q=new LinkedList<Integer>();
+int arr[]={10,20,30,40,50};
+for(int i=0;i<arr.length;i++){
+q.add(arr[i]);
+}
+ while (!q.isEmpty()) {
+ System.out.print(q.poll() + " "); 
+}
+
+
+SET
+HashSet=>do not maintain insertion order(store only unique)
+int arr[]={10,20,20,10,30,40,20};
+Set<Integer> s=new HashSet<Integer>();
+for(int i=0;i<arr.length;i++){
+s.add(arr[i]);
+}
+for(int i : s){
+System.out.print(i+" ");
+}
+
+LinkedHastSet(maintain insertion order and store unique)
+int arr[]={10,20,20,10,30};
+Set<Integer> s=new LinkedHashSet<Integer>();
+for(int i=0;i<arr.length;i++){
+s.add(arr[i]);
+}
+for(int i:s){
+System.out.print(i+" ");
+}
+
+Treeset(maintain sorted order and store unique);
+int arr[]={30,20,10,10,30,40};
+Set<Integer> s=new TreeSet<Integer>();
+for(int i=0;i<arr.length;i++){
+s.add(arr[i]);
+}
+for(int i: s){
+System.out.print(i+" ");
+}
+
+
+
+STACK
+METHODS:
+peek()=>refers to top element;
+pop()=>referse to remove(remove the top element only);
+isEmpty()=>give boolean value based on stack empty or not
+size()=>refers to length of stack
+push()=>refers to add element
+
+NOTE=> stack works with these methods only 
+apart from these no any other methods used in stack
+always iterate stack through while loop instead of for by using isEmpty() method
+in stack while u are comparing stack element with string then always use .equals() method
+
+simple stack program
+int arr[]={10,20,30,40,50};
+Stack<Integer> stack=new Stack<Integer>();
+for(int i=0;i<arr.length;i++){
+stack.push(arr[i]);
+}
+while(!stack.isEmpty()){
+System.out.print(stack.pop()+" ");
+}
+
+
+reverse string using stack(lifo=>so return in reverse order)
+String str="abcde";
+Stack<Character> stack=new Stack<Character>();
+for(int i=0;i<str.length();i++){
+stack.add(str.charAt(i));
+}
+while(!stack.isEmpty()){
+System.out.print(stack.pop());
+}
+
+String arr[]={"aa","ab","ab","ac"};
+Stack<String> stack=new Stack<String>();
+for(int i=0;i<arr.length;i++){
+if(!stack.isEmpty() && stack.peek().equals(arr[i])){
+stack.pop();
+}
+else {
+stack.push(arr[i]);
+}
+}
+System.out.println(stack.size());
+
+
+reverse words in given string(using stack);
+String str="reverse words in give string";
+String arr[]=str.split(" ");
+Stack<String> stack=new Stack<String>();
+for(int i=0;i<arr.length;i++){
+stack.push(arr[i]);
+}
+while(!stack.isEmpty()){
+System.out.print(stack.pop()+" ");
+}
+
+
+Reverse Equation(using stack)
+String s="20-3+5*2";
+String arr[]=s.split("[-+*/]");
+Stack<String> stack=new Stack<String>();
+for(int i=0;i<arr.length;i++){
+stack.push(arr[i]);
+}
+Stack<Character> stack1=new Stack<Character>();
+for(int i=0;i<s.length();i++){
+if(s.charAt(i)=='+'|| s.charAt(i)=='-'|| s.charAt(i)=='*'|| s.charAt(i)=='/') stack1.push(s.charAt(i));
+}
+while(!stack.isEmpty()){
+System.out.print(stack.pop());
+if(!stack1.isEmpty()) {
+System.out.print(stack1.pop());
+}
+}
+
+
+valid parantheses(stack)
+String str = "()[]{}(";
+Stack<Character> stack = new Stack<>();
+if (str.length() % 2 != 0) {
+System.out.println("false");
+return;
+}
+for (int i = 0; i < str.length(); i++) {
+ char c = str.charAt(i);
+if (c == '(' || c == '[' || c == '{') {
+ stack.push(c);
+} 
+else {           
+if (stack.isEmpty()) {
+System.out.println("false");
+return;
+}
+char top = stack.peek();
+if ((top == '(' && c == ')') ||
+(top == '[' && c == ']') ||
+(top == '{' && c == '}')) {
+ stack.pop();
+} else {
+System.out.println("false");
+ return;
+ }
+ }
+ }
+ System.out.println(stack.isEmpty() ? "true" : "false");
+
+
+minimum to make parentheses valid
+String str=()));
+Stack<Character> stack=new Stack<Character>();
+for(int i=0;i<str.length();i++){
+char c=str.charAt(i);
+if(stack.isEmpty()) stack.push(c);
+else{
+if(stack.peek()=='(' && c==')') stack.pop();
+else stack.push(c);
+}
+}
+System.out.println(stack.size());
+
+
+MAP(KEY VALUE PAIR)
+easy to find a frequency of elements
+we find frequency of element in two ways
+1)=>by creating freq array 
+2)=>by hashmap
+methods => put (key,value);
+               get(key)=>return value;
+
+
+frequency of element(using map)
+int arr[]={4,5,-3,8,-3,4,4,-3,6,4};
+Map<Integer ,Integer> freq=new HashMap<Integer, Integer>();
+for(int i=0;i<arr.length;i++){
+if(freq.get(arr[i])==null){
+freq.put(arr[i],1);
+}
+else{
+int fre=freq.get(arr[i])+1;
+freq.put(arr[i],fre);
+}
+}
+for(int i=0;i<arr.length;i++){
+System.out.println(arr[i]+" "+freq.get(arr[i]));
+}
+
+charcter and its frequancy(using map)
+char arr[]={'a','b','a','d','b','c'};
+Map<Character,Integer> charMap=new HashMap<Character,Integer>();
+for(int i=0;i<arr.length;i++){
+if(charMap.get(arr[i])==null){
+charMap.put(arr[i],1);
+}
+else{
+int freq=charMap.get(arr[i])+1;
+charMap.put(arr[i],freq);
+}
+}
+Set<Character> set=new LinkedHashSet<>();
+for(int i=0;i<arr.length;i++){
+    set.add(arr[i]);
+}
+for(char i: set){
+    System.out.println(i+" "+charMap.get(i));
+}
+
+same number with same frequency(using map)
+int arr[]={4,5,-3,8,-3,4,4,-3,6,4};
+Map<Integer,Integer> mp=new HashMap<>();
+for(int i=0;i<arr.length;i++){
+if(mp.get(arr[i])==null){
+mp.put(arr[i],1);
+}
+else{
+int freq=mp.get(arr[i])+1;
+mp.put(arr[i],freq);
+}
+}
+Set<Integer> s=new TreeSet<>();
+for(int i=0;i<arr.length;i++){
+s.add(arr[i]);
+}
+for(int i: s){
+if(Math.abs(i)==mp.get(i)){
+    System.out.println(i+" "+mp.get(i));
+}
+}
+
+
+Contains duplicate(using map)
+int arr[]={1,2,3,4,5};
+Map<Integer,Integer> hm=new HashMap<>();
+for(int i=0;i<arr.length;i++){
+if(hm.get(arr[i])==null){
+hm.put(arr[i],1);
+}
+else{
+int freq=hm.get(arr[i])+1;
+hm.put(arr[i],freq);
+}
+}
+Set<Integer> s=new LinkedHashSet<Integer>();
+for(int i=0;i<arr.length;i++){
+s.add(arr[i]);
+}
+for(int i:s){
+if(hm.get(i)>=2){
+System.out.println("true");
+return;
+}
+}
+System.out.println("false");
+
+
+
+First unique character in string(using map)
+String s="geekuhgfdrteugeek";
+Map<Character,Integer> hm=new HashMap<>();
+for(int i=0;i<s.length();i++){
+if(hm.get(s.charAt(i))==null){
+hm.put(s.charAt(i),1);
+}
+else{
+int freq=hm.get(s.charAt(i))+1;
+hm.put(s.charAt(i),freq);
+}
+}
+Set<Character> set=new LinkedHashSet<>();
+for(int i=0;i<s.length();i++){
+set.add(s.charAt(i));
+}
+for(int i=0;i<s.length();i++){
+if(hm.get(s.charAt(i))==1){
+System.out.println(i);
+return;
+}
+}
+System.out.println(-1);
+
+
+unique number of occurance(means all number should have unique frequency)
+int arr[]={1,2,2,1,1,3};
+Map<Integer,Integer> hm=new HashMap<>();
+for(int i=0;i<arr.length;i++){
+if(hm.get(arr[i])==null){
+hm.put(arr[i],1);
+}
+else{
+int freq=hm.get(arr[i])+1;
+hm.put(arr[i],freq);
+}
+}
+Set<Integer> s=new LinkedHashSet<>();
+for(int i=0;i<arr.length;i++){
+s.add(arr[i]);
+}
+Set<Integer> s1=new LinkedHashSet<>();
+for(int i:s){
+s1.add(hm.get(i));
+}
+if(s.size()==s1.size()){
+System.out.println("true");
+}
+else{
+System.out.println("false");
+}
+
+
+
+longest substring without repeating character
+String str="quukeu";
+String substr="";
+Set<Character> set=new LinkedHashSet<>();
+for(int i=0;i<str.length();i++){
+for(int j=i;j<str.length();j++){
+String sum="";
+set.clear(); 
+for(int k=i;k<=j;k++){
+sum+=str.charAt(k);
+}
+for(int m=0;m<sum.length();m++){
+set.add(sum.charAt(m));
+}
+if(sum.length()==set.size() && sum.length()>substr.length()){
+substr=sum;
+}
+}
+}
+System.out.println(substr.length());
+
+
+
+Longest K unique characters substring
+String str="aabacbebebe";
+String substr="";
+int O=3;
+Set<Character> set=new LinkedHashSet<>();
+for(int i=0;i<str.length();i++){
+for(int j=i;j<str.length();j++){
+String sum="";
+set.clear(); 
+for(int k=i;k<=j;k++){
+sum+=str.charAt(k);
+}
+for(int m=0;m<sum.length();m++){
+set.add(sum.charAt(m));
+}
+if(set.size()==O && sum.length()>substr.length()){
+substr=sum;
+}
+}
+}
+System.out.println(substr.length());
+
+
+Print Binary
+int n=4;
+for(int i=1;i<=n;i++){
+String binary = Integer.toBinaryString(i);
+System.out.print(binary+" ");
+}
+
+
+Arraylist=>contigenous memory location
+LInkedList=>not an contigenous memory location
+
+
+
+Linked List
+Single linked list
+store data and address for prev element
+
+=>if given linkedlist as a parameter in function then we directly find size by size() method
+=> if given only head node then traverse and find size manually
+=> we have head node and tail node in linked list(head always target to first element and tail node always target to last element)
+
+=>linked list is not an index-based data structure like an array. Unlike arrays, where elements can be accessed using an index, a linked list requires traversal from the head element to find an element at a specific index.
+
+=>If we want to get next element of singly linked list we have pointer called next=> ex: head.next(gives next element)
+=>Singly linkedlist is a one way traversal=>we traverse only left to right we cant traverse right to left(it store only prev element address and data) so it do not have prev pointer it has only next pointer 
+=>doubly linkedlist is a two way traversal=>we can traverse both left to right and right to left(it store prev element address,next element adsress and data) so it have both next prev pointer
+=>we can get next element by slow.next(which means index+1)
+=>we can get next to next element by slow.next.next(which means index+2)
+
+
+Note=> stack is also not an index based not even linked list
+stack methods=>push(),pop(),peek(),size(),isEmpty()=>we solve any stack problems using only these methods
+linkedlist =>size(),head,tail,next,prev,next.next,prev.prev pointers
+
+circular singly list=>last node points to an first node address(its not compulsory that last node points to an first only it can points to an any node of a list but not null)
+singly linked list=>last node points to an null
+
+
+
+program to find the size of linked list where given a head node(given head node so travesered manually and found size. if given linkedlist only then find easily by size() method)
+public int size(ListNode head){
+int curr=head
+int count=0;
+while(curr!=null){
+curr=curr.next;
+count++;
+}
+return count;//gives the size of linked list;
+} 
+
+//find middle element of linked list(given head node)(brute force);
+public node size(ListNode head){
+node curr=head
+int count=0;
+while(curr!=null){
+curr=curr.next;
+count++;
+}
+node ans=head;
+while(ans<=count/2){
+ans=ans.next;
+}
+return ans;
+}
+
+(optimized approach)
+public node size(ListNode head){
+node slow=head;
+node fast=head;
+while(fast!=null ||fast.next!=null){
+slow=slow.next;
+fast=fast.next.next;
+}
+return slow;
+}
+
+
+linked list cycle(to check wheather the given list is singly circular linked list or not if yes return true else false);
+public Boolean cycle(ListNode head){
+node slow=head;
+node fast=head;
+while(fast!=null && fast.next!=null){
+slow=slow.next;
+fast=fast.next.next;
+if(slow==fast) return true;
+}
+return false;
+}
+
+
+where thy meets up
+public Boolean cycle(ListNode head){
+node slow=head;
+node fast=head;
+while(fast!=null && fast.next!=null){
+slow=slow.next;
+fast=fast.next.next;
+if(slow==fast) return slow;
+}
+return null;
+}
+
+
+reverse linkedlist(given only head);
+public List reverse(ListNode head){
+node cur=head;
+node prev=null;
+while(cur!=null){
+ListNode ahead = cur.next;
+cur.next = prev;           
+prev = cur;                
+cur = ahead;     
+}
+return prev;
+}
+
+Note=>mainly we solve all the linkedlist problems by using two pointers
+In linkedlist we want to compare any two or more nodes then we use head.val<head1.value we use this with conditional function
